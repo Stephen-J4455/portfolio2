@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stephen Amuzu | Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  </head>
+  <body class="theme-soft">
+    <div class="background-shapes" aria-hidden="true">
+      <span class="blur-ball blur-ball--one"></span>
+      <span class="blur-ball blur-ball--two"></span>
+      <span class="blur-ball blur-ball--three"></span>
+    </div>
+    <!-- Header -->
+    <header class="header glass">
+      <div class="container header-flex">
+        <nav class="nav-menu">
+          <ul>
+            <li>
+              <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
+            </li>
+            <li>
+              <a href="#profile"><i class="fa-solid fa-user"></i> Profile</a>
+            </li>
+            <li>
+              <a href="#projects"
+                ><i class="fa-solid fa-diagram-project"></i> Projects</a
+              >
+            </li>
+            <li>
+              <a href="#contact"
+                ><i class="fa-solid fa-envelope"></i> Contact</a
+              >
+            </li>
+            <li>
+              <a href="#" data-privacy-trigger
+                ><i class="fa-solid fa-shield-halved"></i> Privacy</a
+              >
+            </li>
+            <li class="studio-link-mobile">
+              <a href="#" id="studioLink"
+                ><i class="fa-solid fa-user-gear"></i> Studio</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          title="Toggle day/night mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-wrapper">
+      <!-- Hero Section -->
+      <section id="home" class="hero glass animate-from-top">
+        <div class="hero-avatar">
+          <img src="assests/stj.jpg" alt="Stephen Amuzu" />
+        </div>
+        <div class="container hero-content">
+          <div class="hero-text">
+            <span class="hero-badge"
+              ><i class="fa-solid fa-sparkles"></i> Web Experiences crafted for
+              humans</span
+            >
+            <h1>
+              Hi, I'm <span class="highlight">Stephen Amuzu</span> — a
+              full-stack engineer crafting immersive products end-to-end.
+            </h1>
+            <p>
+              Over the last three years freelancing, I've helped founders and
+              teams ship performant, accessible, and visually rich web
+              applications. I merge storytelling, thoughtful UI, and rapid
+              iteration to deliver work that feels future-forward.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn primary-btn"
+                ><i class="fa-solid fa-arrow-right"></i> Explore Projects</a
+              >
+              <a href="#contact" class="btn ghost-btn"
+                ><i class="fa-solid fa-message"></i> Let's Collaborate</a
+              >
+            </div>
+            <div class="hero-stats">
+              <div class="stat-card">
+                <span class="stat-value">3+</span>
+                <span class="stat-label">Years shipping full-stack apps</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-value">40+</span>
+                <span class="stat-label">Freelance builds delivered</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-value">100%</span>
+                <span class="stat-label">Independent client satisfaction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Profile Section -->
+      <section id="profile" class="profile-section glass">
+        <div class="container">
+          <div class="section-heading animate-from-top">
+            <span class="eyebrow">
+              <i class="fa-solid fa-id-card-clip"></i> About
+            </span>
+            <h2>Your next product partner</h2>
+            <p>
+              I architect end-to-end experiences that balance design and
+              engineering. My sweet spot is crafting frontends that feel
+              effortless while wiring robust APIs beneath the surface.
+            </p>
+          </div>
+          <div class="profile-grid">
+            <article class="profile-card animate-from-left">
+              <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Craft</h3>
+              <p>
+                From rapid prototypes to scalable design systems, I obsess over
+                details that make interfaces delightful. Performance,
+                resilience, accessibility, and storytelling are non-negotiable.
+              </p>
+              <ul class="profile-points">
+                <li>
+                  <i class="fa-solid fa-sparkles"></i> Modular, token-driven
+                  design systems
+                </li>
+                <li>
+                  <i class="fa-solid fa-gauge-high"></i> Lighthouse 95+ focus
+                </li>
+                <li>
+                  <i class="fa-solid fa-shield-heart"></i> Inclusive, accessible
+                  workflows
+                </li>
+              </ul>
+            </article>
+
+            <article class="profile-card animate-from-bottom">
+              <h3><i class="fa-solid fa-gears"></i> Tech Stack</h3>
+              <div class="stack-columns">
+                <div>
+                  <h4>Frontend</h4>
+                  <ul>
+                    <li>React & Next.js</li>
+                    <li>TypeScript</li>
+                    <li>CSS-in-JS • Tailwind</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Backend</h4>
+                  <ul>
+                    <li>Node.js & Express</li>
+                    <li>Python & FastAPI</li>
+                    <li>Supabase • Firebase</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Tooling</h4>
+                  <ul>
+                    <li>Figma & Framer</li>
+                    <li>CI/CD pipelines</li>
+                    <li>Prompt Engineering</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="profile-card animate-from-right">
+              <h3><i class="fa-solid fa-rocket"></i> Current Focus</h3>
+              <p>
+                Pushing the envelope with AI-augmented workflows, real-time
+                collaboration, and design systems for scale.
+              </p>
+              <div class="focus-tags">
+                <span>AI copilots</span>
+                <span>DesignOps</span>
+                <span>Web animations</span>
+                <span>DX research</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="projects-section glass">
+        <div class="container">
+          <div class="section-heading animate-from-top">
+            <span class="eyebrow"
+              ><i class="fa-solid fa-diagram-project"></i> Featured Work</span
+            >
+            <h2>Selected builds shaping user journeys</h2>
+            <p>
+              A curated collection of client and lab projects showcasing
+              commerce, productivity, and storytelling interfaces.
+            </p>
+          </div>
+          <div class="projects-grid" id="projectsGrid" data-state="loading">
+            <article class="project-card project-card--placeholder">
+              <div class="project-content">
+                <div class="project-meta">
+                  <span class="project-chip">Loading</span>
+                </div>
+                <h3>Fetching latest builds…</h3>
+                <p>
+                  One moment while we pull live project data from the studio.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="projects-empty hidden" id="projectsEmpty">
+            <p>No projects found yet. Check back soon!</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="studio" class="admin-panel glass hidden" aria-hidden="true">
+        <div class="container">
+          <div class="admin-panel__header">
+            <h2><i class="fa-solid fa-user-gear"></i> Project Studio</h2>
+            <button id="closeAdmin" class="ghost-btn" type="button">
+              <i class="fa-solid fa-eye-slash"></i>
+              Hide
+            </button>
+          </div>
+          <p class="admin-panel__hint">
+            Authenticated creators can upload portfolio items. Press
+            <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd> and enter the
+            studio passcode to toggle this panel.
+          </p>
+          <form id="projectForm" class="admin-form" autocomplete="off">
+            <fieldset>
+              <legend>Project basics</legend>
+              <label>
+                Project name
+                <input type="text" name="name" required />
+              </label>
+              <label>
+                Tagline / short description
+                <input type="text" name="tagline" maxlength="120" required />
+              </label>
+              <label>
+                Full description
+                <textarea name="description" rows="4" required></textarea>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Metadata</legend>
+              <label>
+                Category
+                <input
+                  type="text"
+                  name="category"
+                  placeholder="e.g. E-commerce" />
+              </label>
+              <label>
+                Tech stack (comma separated)
+                <input
+                  type="text"
+                  name="tech"
+                  placeholder="React, Firebase, Tailwind" />
+              </label>
+              <label>
+                Live link
+                <input type="url" name="liveUrl" placeholder="https://" />
+              </label>
+              <label>
+                Repo / case study link
+                <input type="url" name="repoUrl" placeholder="https://" />
+              </label>
+              <label>
+                Highlighted?
+                <select name="featured">
+                  <option value="true">Yes</option>
+                  <option value="false" selected>No</option>
+                </select>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Assets</legend>
+              <label>
+                Cover image
+                <input type="file" name="cover" accept="image/*" required />
+              </label>
+              <label>
+                Additional files (optional)
+                <input type="file" name="attachments" multiple />
+              </label>
+            </fieldset>
+
+            <button class="btn primary-btn" type="submit">
+              <span class="btn__text">Save project</span>
+              <span class="btn__spinner" aria-hidden="true"></span>
+            </button>
+            <p class="admin-form__status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-section glass">
+        <div class="container">
+          <div class="section-heading animate-from-top">
+            <span class="eyebrow"
+              ><i class="fa-solid fa-paper-plane"></i> Let's collaborate</span
+            >
+            <h2>Ready to prototype the next big thing?</h2>
+            <p>
+              Drop a line for product partnerships, mentorship, or speaking
+              engagements. I reply within 24 hours.
+            </p>
+          </div>
+          <div class="contact-grid">
+            <form id="contactForm" class="contact-form animate-from-left">
+              <div class="floating-label">
+                <input type="text" id="name" name="name" required />
+                <label for="name">Your Name</label>
+              </div>
+              <div class="floating-label">
+                <input type="email" id="email" name="email" required />
+                <label for="email">Work Email</label>
+              </div>
+              <div class="floating-label">
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required></textarea>
+                <label for="message">Project details, goals, timeline</label>
+              </div>
+              <button type="submit" class="btn primary-btn">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+              <p id="contactStatus" class="contact-status" role="status"></p>
+            </form>
+            <aside class="contact-card animate-from-right">
+              <h3><i class="fa-solid fa-address-book"></i> Contact Info</h3>
+              <ul class="contact-list">
+                <li>
+                  <i class="fas fa-envelope"></i>
+                  <a href="mailto:stevejupiter4@gmail.com"
+                    >stevejupiter4@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <i class="fas fa-phone"></i>
+                  <a href="tel:+233532973455">+233 53 297 3455</a>
+                </li>
+                <li>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Accra, Ghana</span>
+                </li>
+              </ul>
+              <div class="contact-cta">
+                <p>Follow my work across the web</p>
+                <div class="social-links">
+                  <a href="#" aria-label="GitHub"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a href="#" aria-label="LinkedIn"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                  <a href="#" aria-label="Twitter"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a href="#" aria-label="Instagram"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Passcode Modal -->
+    <div id="passcodeModal" class="modal-overlay hidden">
+      <div class="modal-content glass">
+        <h3><i class="fa-solid fa-key"></i> Studio Access</h3>
+        <p>Enter the passcode to open the Project Studio.</p>
+        <form id="passcodeForm">
+          <div class="floating-label">
+            <input
+              type="password"
+              id="passcodeInput"
+              name="passcode"
+              required />
+            <label for="passcodeInput">Passcode</label>
+          </div>
+          <div class="modal-actions">
+            <button type="button" id="cancelPasscode" class="btn ghost-btn">
+              Cancel
+            </button>
+            <button type="submit" class="btn primary-btn">Enter</button>
+          </div>
+          <p id="passcodeError" class="passcode-error"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Chat Bot Button -->
+    <div class="chat-bot" id="chatBotBtn" aria-label="Open chat">
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12C2 13.54 2.38 15 3.03 16.3L2 22L7.7 20.97C9 21.62 10.46 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z"
+          fill="currentColor" />
+        <circle cx="8" cy="12" r="1.5" fill="white" />
+        <circle cx="12" cy="12" r="1.5" fill="white" />
+        <circle cx="16" cy="12" r="1.5" fill="white" />
+      </svg>
+      <div class="chat-bot-pulse"></div>
+    </div>
+
+    <!-- Chat Window -->
+    <div class="chat-page hidden">
+      <div class="chat-container glass">
+        <!-- Chat Header -->
+        <div class="chat-header">
+          <div class="chat-header-info">
+            <img
+              src="assests/stj.jpg"
+              alt="Stephen Amuzu"
+              class="chat-avatar" />
+            <div class="chat-header-text">
+              <h4>Stephen AI Assistant</h4>
+              <span class="chat-status">
+                <span class="status-dot"></span>
+                Online
+              </span>
+            </div>
+          </div>
+          <button id="closeChat" class="chat-close-btn" aria-label="Close chat">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chatMessages">
+          <div class="chat-msg-wrapper bot-wrapper">
+            <img src="assests/stj.jpg" alt="Bot" class="chat-msg-avatar" />
+            <div class="chat-msg bot">
+              <p>
+                Hi! 👋 I'm Stephen's AI assistant. How can I help you today?
+              </p>
+              <span class="chat-timestamp">Just now</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Suggestions -->
+        <div class="chat-suggestions-wrapper" id="chatSuggestionsWrapper">
+          <button class="suggestion-chip" data-text="Tell me about Stephen">
+            <i class="fa-solid fa-user"></i> About Stephen
+          </button>
+          <button class="suggestion-chip" data-text="Show me projects">
+            <i class="fa-solid fa-code"></i> Projects
+          </button>
+          <button class="suggestion-chip" data-text="What technologies?">
+            <i class="fa-solid fa-layer-group"></i> Tech Stack
+          </button>
+          <button class="suggestion-chip" data-text="How to contact?">
+            <i class="fa-solid fa-envelope"></i> Contact
+          </button>
+        </div>
+
+        <!-- Chat Input Form -->
+        <form id="chatForm" class="chat-form">
+          <div class="chat-input-wrapper">
+            <button
+              type="button"
+              id="chatOptionsBtn"
+              class="chat-option-btn"
+              title="Quick suggestions">
+              <i class="fa-solid fa-lightbulb"></i>
+            </button>
+            <input
+              type="text"
+              id="chatInput"
+              placeholder="Type your message..."
+              autocomplete="off"
+              required />
+            <button
+              type="submit"
+              class="chat-send-btn"
+              aria-label="Send message">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+        </form>
+
+        <!-- Typing Indicator -->
+        <div class="chat-typing hidden" id="chatTyping">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden Suggestions Dropdown -->
+    <select id="chatSuggestions" class="hidden" aria-hidden="true">
+      <option value="">Select a suggestion</option>
+      <option>What is your name?</option>
+      <option>How are you?</option>
+      <option>Who are you?</option>
+      <option>What can you do?</option>
+      <option>Tell me a joke?</option>
+      <option>Who created you?</option>
+      <option>Tell me about your developer?</option>
+      <option>What technologies do you know?</option>
+      <option>What is web development?</option>
+      <option>What programming languages do you use?</option>
+      <option>Can you show me your portfolio?</option>
+      <option>How can I contact you?</option>
+      <option>What projects have you built?</option>
+      <option>What frameworks do you use?</option>
+      <option>Can you help me learn programming?</option>
+      <option>What is your favorite project?</option>
+    </select>
+
+    <!-- Footer -->
+    <footer class="footer glass">
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; 2025 Stephen Amuzu. Built with empathy & caffeine.</p>
+          <div class="footer-links">
+            <a href="#" data-privacy-trigger
+              ><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a
+            >
+            <div class="policypage hide">
+              <p>
+                Privacy Policy Last Updated: [8th May 2025] Thank you for
+                visiting my portfolio website. Your privacy is important to me,
+                and I am committed to protecting your personal data in
+                compliance with the General Data Protection Regulation (GDPR)
+                and other applicable privacy laws. This Privacy Policy explains
+                how I collect, use, and safeguard your information when you
+                visit StephenJ.github.io.
+              </p>
+            </div>
+            <a href="#"
+              ><i class="fa-solid fa-file-contract"></i> Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-storage-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
