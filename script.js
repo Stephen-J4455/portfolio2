@@ -368,10 +368,42 @@ chatForm.addEventListener("submit", async (e) => {
 - Focuses on: AI workflows, design systems, web animations, real-time collaboration
 Answer professionally and concisely.`;
 
-    console.log("Calling Hugging Face API directly...");
+    console.log("Fetching Hugging Face token from Supabase Edge Function...");
 
-    // Call Hugging Face Chat API directly
-    const HF_TOKEN = "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";
+    // Get token from Supabase Edge Function
+    let HF_TOKEN = "";
+    try {
+      const tokenResponse = await fetch(
+        `${window.supabaseConfig.url}/functions/v1/get-hf-token`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${window.supabaseConfig.anonKey}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (!tokenResponse.ok) {
+        throw new Error("Failed to fetch token");
+      }
+
+      const tokenData = await tokenResponse.json();
+      HF_TOKEN = tokenData.token;
+
+      if (!HF_TOKEN) {
+        throw new Error("Token not found in response");
+      }
+    } catch (tokenError) {
+      console.error("Error fetching Hugging Face token:", tokenError);
+      setTypingIndicator(false);
+      await addBotMessage(
+        "Configuration error. Please contact the site administrator."
+      );
+      return;
+    }
+
+    console.log("Token retrieved, calling Hugging Face API...");
 
     const response = await fetch(
       "https://router.huggingface.co/v1/chat/completions",
