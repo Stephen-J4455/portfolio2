@@ -289,7 +289,8 @@ async function addBotMessage(message) {
   const msgDiv = document.createElement("div");
   msgDiv.className = "chat-msg bot";
 
-  const textP = document.createElement("p");
+  const textP = document.createElement("div");
+  textP.className = "chat-msg-content";
   textP.textContent = ""; // Start empty for typing effect
 
   const timestamp = document.createElement("span");
@@ -304,12 +305,27 @@ async function addBotMessage(message) {
   chatMessages.appendChild(wrapper);
   chatMessages.scrollTop = chatMessages.scrollHeight;
 
-  // Typing effect
+  // Typing effect with markdown rendering
   const words = message.split(" ");
+  let currentText = "";
+
   for (let i = 0; i < words.length; i++) {
-    textP.textContent += (i > 0 ? " " : "") + words[i];
+    currentText += (i > 0 ? " " : "") + words[i];
+
+    // Render markdown as we type
+    if (typeof marked !== "undefined") {
+      textP.innerHTML = marked.parse(currentText);
+    } else {
+      textP.textContent = currentText;
+    }
+
     chatMessages.scrollTop = chatMessages.scrollHeight;
     await new Promise((res) => setTimeout(res, 50));
+  }
+
+  // Final render to ensure all markdown is processed
+  if (typeof marked !== "undefined") {
+    textP.innerHTML = marked.parse(message);
   }
 }
 
@@ -342,25 +358,77 @@ chatForm.addEventListener("submit", async (e) => {
   setTypingIndicator(true);
 
   try {
-    // Send to backend
-    const res = await fetch("https://steve-t3ab.onrender.com/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: userMsg }),
-    });
-    const data = await res.json();
+    // Portfolio context for the AI
+    const systemContext = `You are Stephen Amuzu's AI assistant. Key information:
+- Full-stack engineer with 3+ years freelance experience
+- Delivered 40+ projects with 100% client satisfaction
+- Tech stack: React, Next.js, TypeScript, Node.js, Python, Supabase, Firebase
+- Contact: stevejupiter4@gmail.com, +233 53 297 3455
+- Location: Accra, Ghana
+- Focuses on: AI workflows, design systems, web animations, real-time collaboration
+Answer professionally and concisely.`;
+
+    console.log("Calling Hugging Face API directly...");
+
+    // Call Hugging Face Chat API directly
+    const HF_TOKEN = "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";
+
+    const response = await fetch(
+      "https://router.huggingface.co/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${HF_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: "MiniMaxAI/MiniMax-M2:novita",
+          messages: [
+            {
+              role: "system",
+              content: systemContext,
+            },
+            {
+              role: "user",
+              content: userMsg,
+            },
+          ],
+          max_tokens: 300,
+          temperature: 0.7,
+        }),
+      }
+    );
+
+    console.log("Response status:", response.status);
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("API Error:", errorText);
+      throw new Error(`API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log("Response data:", data);
 
     // Hide typing indicator
     setTypingIndicator(false);
 
+    // Extract the AI response
+    const botResponse =
+      data.choices?.[0]?.message?.content ||
+      "I'm sorry, I couldn't process that.";
+
     // Add bot response with typing effect
-    await addBotMessage(data.response || "I'm sorry, I couldn't process that.");
+    await addBotMessage(botResponse);
   } catch (error) {
     setTypingIndicator(false);
+    console.error("Chat error details:", error);
+    console.error("Error type:", error.name);
+    console.error("Error message:", error.message);
+
     await addBotMessage(
       "Sorry, I'm having trouble connecting. Please try again later."
     );
-    console.error("Chat error:", error);
   }
 });
 

@@ -1320,6 +1320,104 @@ body.night .profile-card {
   margin: 0;
 }
 
+/* Markdown content styling in chat messages */
+.chat-msg-content {
+  margin: 0;
+}
+
+.chat-msg-content p {
+  margin: 0 0 0.5em 0;
+}
+
+.chat-msg-content p:last-child {
+  margin-bottom: 0;
+}
+
+.chat-msg-content strong,
+.chat-msg-content b {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+body.night .chat-msg-content strong,
+body.night .chat-msg-content b {
+  color: var(--color-accent);
+}
+
+.chat-msg-content em,
+.chat-msg-content i {
+  font-style: italic;
+}
+
+.chat-msg-content code {
+  background: rgba(127, 90, 240, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+  color: var(--color-primary);
+}
+
+body.night .chat-msg-content code {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-accent);
+}
+
+.chat-msg-content pre {
+  background: rgba(127, 90, 240, 0.08);
+  padding: 0.75rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0.5em 0;
+}
+
+.chat-msg-content pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+.chat-msg-content ul,
+.chat-msg-content ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.chat-msg-content li {
+  margin: 0.25em 0;
+}
+
+.chat-msg-content a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.chat-msg-content a:hover {
+  color: var(--color-accent);
+}
+
+.chat-msg-content blockquote {
+  border-left: 3px solid var(--color-primary);
+  padding-left: 1em;
+  margin: 0.5em 0;
+  opacity: 0.9;
+}
+
+.chat-msg-content h1,
+.chat-msg-content h2,
+.chat-msg-content h3 {
+  font-size: 1em;
+  font-weight: 600;
+  margin: 0.5em 0 0.3em 0;
+  color: var(--color-primary);
+}
+
+body.night .chat-msg-content h1,
+body.night .chat-msg-content h2,
+body.night .chat-msg-content h3 {
+  color: var(--color-accent);
+}
+
 .chat-msg.bot {
   background: white;
   color: var(--color-text);
